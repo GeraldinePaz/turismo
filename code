@@ -1,0 +1,22 @@
+/**
+ * Sirve la página "Curicó Turístico" como una Web App de Google Apps Script.
+ *
+ * Cómo usarlo:
+ * 1. En el proyecto de Apps Script, crea un archivo HTML nuevo llamado "Index"
+ *    (Archivo → Nuevo → Archivo HTML → nómbralo "Index").
+ * 2. Pega ahí TODO el contenido del archivo ruta-totems-curico.html
+ *    (desde <!doctype html> hasta </html>).
+ * 3. Este archivo Code.gs va aparte, como el script principal del proyecto.
+ * 4. Implementa el proyecto como aplicación web:
+ *    Implementar → Nueva implementación → tipo "Aplicación web".
+ *    - Ejecutar como: Yo (tu cuenta)
+ *    - Quién tiene acceso: Cualquier usuario (o según lo que necesites)
+ * 5. Copia la URL de la Web App que te entrega Apps Script; esa es la página
+ *    en vivo, servida por Google.
+ */
+function doGet(e) {
+  return HtmlService.createHtmlOutputFromFile('Index')
+    .setTitle('Curicó Turístico — Guía de lugares para visitar')
+    .addMetaTag('viewport', 'width=device-width, initial-scale=1, viewport-fit=cover')
+    .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
+}
